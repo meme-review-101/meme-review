@@ -1,0 +1,31 @@
+html, body {
+    height: 100%;
+}
+
+#waveform {
+    width: 512px;
+    height: 200px;
+}
+
+/* #waveform > circle {
+    fill: #FFF;
+} */
+
+#waveform > .border {
+    stroke: #FFF;
+    stroke-width: 1px;
+    fill: none;
+}
+
+#waveform > .highAmpThreshold {
+    stroke: #FFF;
+}
+
+#waveform-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
