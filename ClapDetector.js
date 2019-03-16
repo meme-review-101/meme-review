@@ -30,7 +30,6 @@ export default class ClapDetector {
                     if (this.dataCallback) this.dataCallback(left)
                     const clapData = this.detectClap(left)
                     if (clapData) {
-                        console.log('CLAP!', clapData)
                         if (this.clapCallback) this.clapCallback()
                     }
                 }
@@ -41,7 +40,7 @@ export default class ClapDetector {
     // From: https://gist.github.com/pachacamac/d7b3d667ecaa0cd39f36
     detectClap(data) {
         const t = new Date().getTime()
-        if (t - this.lastClap < 200) return null // TWEAK HERE
+        if (t - this.lastClap < 400) return null // TWEAK HERE
         const zeroCrossings = []
         let highAmps = []
         for (let i = 1; i < data.length; i++) {
@@ -55,8 +54,6 @@ export default class ClapDetector {
 
         if (highAmps.length === 0) return null
         const range = highAmps[highAmps.length - 1] - highAmps[0]
-
-        console.debug({ highAmps, zeroCrossings, range })
 
         if (
             highAmps.length >= this.minHighAmpCount &&

@@ -6,14 +6,30 @@
     <title>Subscribe to Pewdiepie</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 <body>
-    <div id="waveform-container"> 
+    <!-- <div id="waveform-container"> 
         <svg id="waveform">
             <rect class="border" x="0" y="0" width="100%" height="100%"></rect>
             <line class="highAmpThreshold" x1="0" x2="100%" y1="0" y2="0"></line>
         </svg>
+    </div> -->
+    <div id="player-wrapper">
+        <div id="player"></div>
+        <div id="barrier"></div>
     </div>
+    <div class="container">
+
+    </div>
+    <!---iframe id ="meme-review"
+    width = "640" height = "360"
+    src="https://www.youtube.com/watch?v=HUYjNWei4Ok"
+    frameborder = "0"
+    style = "border: solid 4px #37474F"
+    ></iframe>-->
+    <script src="player.js"></script>
     <script src="script.js" type="module"></script>
+ 
 </body>
 </html>
