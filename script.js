@@ -116,7 +116,6 @@ clapDetector.onClap(() => {
 })
 
 clapDetector.onData(data => {
-    console.debug('Data:', data)
     const zeroCrossings = []
     for (let i = 1; i < data.length; i++) {
         if (
