@@ -48,8 +48,7 @@ clapDetector.onClap(() => {
         secondClapTime = true
         setTimeout(() => {
             secondClapTime = false
-            if (!secondClapComplete)
-                container.innerHTML = ''
+            if (!secondClapComplete) container.innerHTML = ''
         }, 600)
         return
     }
@@ -64,8 +63,7 @@ clapDetector.onClap(() => {
         console.log('MEME REVIEW')
         changeColor()
         container.innerHTML = '<p class="title">MEME REVIEW</p>'
-        if (player)
-            player.unMute()
+        if (player) player.unMute()
 
         document.querySelector('#barrier').style.visibility = 'hidden'
         setTimeout(() => {
@@ -112,13 +110,13 @@ clapDetector.onClap(() => {
 
     //window.location = "https://www.youtube.com/embed/HUYjNWei4Ok?autoplay=1&loop=1&playlist=HUYjNWei4Ok"
     //window.location = "https://www.youtube.com/embed/HUYjNWei4Ok?autoplay=1&loop=1&list=RD1A_f5wxAIwE&t=8"
-    window.location = "https://www.youtube.com/embed/HUYjNWei4Ok?autoplay=1&loop=1&list=PLOs8TpWyCPQFpcR0UkGVdEcItgNmaxvht"
+    window.location =
+        'https://www.youtube.com/embed/HUYjNWei4Ok?autoplay=1&loop=1&list=PLOs8TpWyCPQFpcR0UkGVdEcItgNmaxvht'
     //window.location = "https://www.youtube.com/watch?v=t4pkol6oKEM"
-
 })
 
-
 clapDetector.onData(data => {
+    console.debug('Data:', data)
     const zeroCrossings = []
     for (let i = 1; i < data.length; i++) {
         if (
@@ -132,12 +130,7 @@ clapDetector.onData(data => {
         .select('#waveform')
         .selectAll('circle')
         .data(data)
-    circle
-        .enter()
-        .append('circle')
-        .attr('cx', (d, i) => i / 2)
-        .attr('cy', d => d * 100 + 100)
-        .attr('r', 2)
+    circle.enter().append('circle')
     circle.exit().remove()
     circle
         .attr('cx', (d, i) => i / 2)

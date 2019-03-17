@@ -34,7 +34,7 @@ export default class ClapDetector {
                     }
                 }
             })
-            .catch(e => console.log(e))
+            .catch(e => console.error(e))
     }
 
     // From: https://gist.github.com/pachacamac/d7b3d667ecaa0cd39f36
